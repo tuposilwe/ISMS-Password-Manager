@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
          window.close();
     });
 
-    getBtn.addEventListener('click', getPass);
+    
 });
 
 async function storeData(data){
@@ -45,18 +45,6 @@ function notifyUser(message) {
 
 
 
-async function getPass() {
-    const { userData } = await chrome.storage.local.get("userData");
-    if (userData) {
-
-        // alert(userData.username+" "+userData.password);
-        
-        console.log("Username:", userData.username);
-        console.log("Password:", userData.password);
-    } else {
-        console.log("No data found");
-    }
-}
 
 
 
