@@ -28,8 +28,8 @@ chrome.commands.onCommand.addListener((command) => {
 function autofillCredentials() {
     chrome.storage.local.get("userData", ({ userData }) => {
         if (userData) {
-            const usernameInput = document.querySelector('#username');  // Change the selector as per the actual field ID on ISMS page
-            const passwordInput = document.querySelector('#password');  // Change the selector as per the actual field ID on ISMS page
+            const usernameInput = document.querySelector('input[type="text"]'); 
+            const passwordInput = document.querySelector('input[type="password"]'); 
 
             if (usernameInput && passwordInput) {
                 usernameInput.value = userData.username;

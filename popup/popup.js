@@ -2,7 +2,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const usernameInput = document.getElementById('usernameInput');
     const passwordInput = document.getElementById('passwordInput');
     const saveBtn = document.getElementById('saveBtn');
-    const getBtn = document.getElementById('getBtn');
+
+    // Function to check if inputs are not empty and enable/disable saveBtn accordingly
+    function checkInputs() {
+        if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+            saveBtn.disabled = true;
+        } else {
+            saveBtn.disabled = false;
+        }
+    }
+
+    // Initial check to disable button if inputs are empty
+    checkInputs();
+
+    // Add event listeners to input fields to check their values on input
+    usernameInput.addEventListener('input', checkInputs);
+    passwordInput.addEventListener('input', checkInputs);
 
     saveBtn.addEventListener('click', function() {
         const username = usernameInput.value;
@@ -11,16 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Username:", username);
         console.log("Password:", password);
 
-        usernameInput.value ='';
-        passwordInput.value='';
+        usernameInput.value = '';
+        passwordInput.value = '';
 
         storeData({ username, password });
         notifyUser("Credentials saved successfully!");
-         window.close();
+        window.close();
     });
-
-    
 });
+
 
 async function storeData(data){
     await chrome.storage.local.set({ userData: { username: data.username, password: data.password } },
@@ -41,10 +55,4 @@ function notifyUser(message) {
         console.log('Notification shown with ID:', notificationId);
     });
 }
-
-
-
-
-
-
 
