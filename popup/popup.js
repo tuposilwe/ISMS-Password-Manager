@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         passwordInput.value='';
 
         storeData({ username, password });
+        notifyUser("Credentials saved successfully!");
          window.close();
     });
 
@@ -28,8 +29,24 @@ async function storeData(data){
     });
 }
 
+
+function notifyUser(message) {
+    chrome.notifications.create('passwordSave1', {
+        type: 'basic',
+        iconUrl: 'hi.png',
+        title: 'ISMS Password Manager',
+        message: message,
+        priority: 1
+    }, function(notificationId) {
+        console.log('Notification shown with ID:', notificationId);
+    });
+}
+
+
+
+
 async function getPass() {
-    const { userData } = await chrome.storage.session.get("userData");
+    const { userData } = await chrome.storage.local.get("userData");
     if (userData) {
 
         // alert(userData.username+" "+userData.password);

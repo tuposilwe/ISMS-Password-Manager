@@ -1,20 +1,30 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
+    "name": "ISMS Password Manager",
+    "description": "Secure ISMS Password Manager",
     "version": "1.0",
     "action": {
-      "default_popup": "hello.html",
-      "default_icon": "hi.png"
+      "default_popup": "popup/index.html",
+      "default_icon": "popup/hi.png"
     },
-    
+
     "background": {
       "service_worker": "background.js"
       },
 
     "permissions":[
-        "storage"
+        "storage",
+        "activeTab",
+        "scripting",
+        "notifications"
     ],
+    "content_scripts": [
+      {
+        "matches": ["*://isms.iaa.ac.tz/*"],
+        "js": ["content-scripts/contentScript.js"]
+      }
+    ]
+    ,
     "options_page": "options/options.html"
 
 }
