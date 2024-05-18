@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (password) {
             updatePassword(password);
-            alert('Password updated successfully!');
+            console.log('Password updated successfully!');
         } else {
-            alert('Please enter a new password.');
+            console.log('Please enter a new password.');
         }
     });
 
@@ -31,10 +31,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (userData) {
             userData.password = password;
             await chrome.storage.local.set({ userData: userData }, function() {
-                console.log('Password updated:', userData);
+                notifyUser("Password updated successfully!");
             });
         } else {
             console.log('No username found to update the password for');
         }
     }
 });
+
+function notifyUser(message) {
+    chrome.notifications.create('passwordSave7', {
+        type: 'basic',
+        iconUrl: 'hi.png',
+        title: 'ISMS Password Manager',
+        message: message,
+        priority: 1
+    }, function(notificationId) {
+        console.log('Notification shown with ID:', notificationId);
+    });
+}
+
