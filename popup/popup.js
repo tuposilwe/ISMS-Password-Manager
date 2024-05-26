@@ -45,9 +45,9 @@ async function storeData(data){
 
 
 function notifyUser(message) {
-    chrome.notifications.create('passwordSave7', {
+    chrome.notifications.create('passwordSave9', {
         type: 'basic',
-        iconUrl: 'hi.png',
+        iconUrl: 'icon.png',
         title: 'ISMS Password Manager',
         message: message,
         priority: 1

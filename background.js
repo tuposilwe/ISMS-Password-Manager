@@ -3,7 +3,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.notifications.onClicked.addListener((notificationId) => {
-    if (notificationId === "passwordSave7") {
+    if (notificationId === "passwordSave8") {
         console.log("Password saved notification clicked");
     }
 });
