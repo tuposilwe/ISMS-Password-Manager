@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ISMS Password Manager",
-  "description": "Secure ISMS Password Manager",
+  "description": "Secure your ISMS Passwords",
   "version": "1.0",
   "action": {
     "default_popup": "popup/index.html",
