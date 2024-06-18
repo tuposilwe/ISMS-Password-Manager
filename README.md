@@ -1,6 +1,6 @@
 ISMS PASSWORD MANAGER CHROME EXTENSION
-!Description
-a Chrome extension to enhance password management for 
+>Description
+>a Chrome extension to enhance password management for 
 users. The extension will enable users to securely save and autofill their usernames and 
 passwords across websites, providing convenience and security. By leveraging encryption 
 techniques, the extension will ensure the confidentiality of user credentials.
