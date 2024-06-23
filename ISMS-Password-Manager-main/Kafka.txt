@@ -1,0 +1,9 @@
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+.\bin\windows\kafka-console-consumer.bat --topic rudigercode --from-beginning --bootstrap-server localhost:9092
+
+
+BCSe_0039_2021
+36026790

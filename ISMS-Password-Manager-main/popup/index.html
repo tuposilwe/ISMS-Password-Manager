@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link href="popup.css" rel="stylesheet" />
+        <script src="popup.js"></script>
+        <script src="../zxcvbn.js"></script>
+        <script src="../aes.js"></script>
+        
+      </head>
+  <body>
+    <h1>ISMS Password Manager</h1>
+     
+    Username
+    <input type="text" id="usernameInput" placeholder="Enter username">
+
+    Password
+    <input type="password" id="passwordInput" placeholder="Enter password">
+
+    <button id="saveBtn">Save Credentials</button> 
+
+    <button id="generate-password">Generate Strong Password</button>
+    <p id="generated-password"></p>
+
+    <h2>Check Password Strength</h2>
+    <input type="password" id="password-input" placeholder="Enter password">
+    <button id="check-password-strength">Check Password Strength</button>
+    <p id="password-strength"></p>
+    <span id="password-badge" class="badge"></span>
+    <h2>LogOut</h2>
+    <button id="logout-button">Logout</button>
+  </body>
+</html> 
+
+
