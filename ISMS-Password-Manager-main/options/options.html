@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AutoFill Extension Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+            width: 30%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            width: 30%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Secure ISMS Password Manager</h1>
+
+    <h2>Edit Credentials</h2>
+    <label for="usernameInput">Username</label>
+    <input type="text" id="usernameInput" placeholder="Username" readonly>
+    <label for="passwordInput">Password</label>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button id="saveBtn">Save</button>
+    <script src="options.js"></script>
+</body>
+</html>
